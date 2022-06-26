@@ -1,4 +1,11 @@
 terraform {
+  # Remove cloud block if you want to move back to local state
+  cloud {
+    organization = "pbaudoux-hashilearn"
+    workspaces {
+      name = "learn-terraform-aws-instance-workspace"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -11,7 +18,9 @@ terraform {
 
 provider "aws" {
   region = "eu-central-1"
-  profile = "Terraform" # aws cli has a "Terraform" profile set up in ~/.aws
+  # aws cli has a "Terraform" profile set up in ~/.aws
+  # Need to be commented out when using Terraform Cloud
+  # profile = "Terraform"
 }
 
 # ressource "ressource_type" "ressource_name"
