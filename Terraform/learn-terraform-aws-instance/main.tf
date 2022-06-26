@@ -3,7 +3,7 @@ terraform {
   cloud {
     organization = "pbaudoux-hashilearn"
     workspaces {
-      name = "learn-terraform-aws-instance-workspace"
+      name = "learn-terraform-aws-instance"
     }
   }
   required_providers {
